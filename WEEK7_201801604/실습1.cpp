@@ -42,7 +42,7 @@ Destructor execution: A  // funcA() 함수 종료되며 funcA의 객체인 r('A') destruct
 
 Destructor execution: B				// main() 함수가 funcA()호출, funcA()는 funcB()호출, funcB() 내에서 예외 발생하고 funcB()의 객체도 소멸
 Destructor execution: A				// funcB()는 자신을 호출한 funcA()의 스택을 모두 해제(Stack unwinding)하며 funcA에 정의된 객체 소멸
-Exception : Exception from funcB!	// funcA()는 예외를 받는 catch문이 없기에, funcB()로부터 받은 예외를 다시 main()의 예외처리영역으로 던져 catch가 예외를 받음.
+Exception : Exception from funcB!	// funcA()는 예외를 받는 catch문이 없기에, funcB()로부터 받은 예외를 다시 main()의 예외처리영역으로 던져 catch가 예외를 받음
 
 funcB에서 예외가 발생하였으나, funcB는 funcA가 호출하고, funcA는 main에서 호출하였다.
 하지만, funcA는 예외를 받는 catch구문이 없기에 예외는 catch문이 있는 main까지 전파된다.
